@@ -11,6 +11,7 @@
 
     <a href="top.php">メニューに戻る</a>
     <hr>
+    <button onclick="location.href='register-input.php'">商品を登録する</button>
     <table>
         <tr>
             <th>名産品ID</th>
