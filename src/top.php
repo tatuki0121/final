@@ -16,18 +16,11 @@
         <button type="submit">一覧</button>
     </form>
 
-    <form action="register.php" method="get">
-        <button type="submit">登録</button>
-    </form>
-
-    <form action="update.php" method="get">
-        <button type="submit">更新</button>
+    <form action="edit.php" method="get">
+        <button type="submit">編集（登録・削除・更新）</button>
     </form>
 
 
-    <form action="delete.php" method="get">
-        <button type="submit">削除</button>
-    </form>
 
 </body>
 
