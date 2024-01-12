@@ -25,7 +25,7 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
         </tr>
         <?php
     $pdo=new PDO($connect,USER,PASS);
-	$sql=$pdo->prepare('select * from product where 名産品ID=?');
+	$sql=$pdo->prepare('select * from 名産品 where 名産品ID=?');
 	$sql->execute([$_POST['名産品ID']]);
 
 

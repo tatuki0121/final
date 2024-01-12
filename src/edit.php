@@ -33,13 +33,13 @@ foreach($pdo->query('select * from 名産品')as $row){
     echo '<td>',$row['県名'],'</td>';
     echo '<td>';
     echo '<form action="update.php" method="post">';
-    echo '<input type="hidden" name="id" value="',$row['名産品ID'],'">';
+    echo '<input type="hidden" name="名産品ID" value="',$row['名産品ID'],'">';
     echo '<button type="submit">更新</button>';
     echo '</form>';
     echo '</td>';
     echo '<td>';
     echo '<form action="delete.php" method="post">';
-    echo '<input type="hidden" name="id" value="',$row['名産品ID'],'">';
+    echo '<input type="hidden" name="名産品ID" value="',$row['名産品ID'],'">';
     echo '<button type="submit">削除</button>';
     echo '</form>';
     echo '</td>';
