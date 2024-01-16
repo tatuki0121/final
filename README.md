@@ -7,4 +7,4 @@
 
 システム名：名産品管理システム
 
-URL：
+URL：http://aso2201386.under.jp/src/top.php
