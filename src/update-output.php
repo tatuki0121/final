@@ -13,6 +13,7 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/update-output.css">
 
 </head>
 
@@ -55,7 +56,10 @@ foreach($pdo->query('select * from product')as $row){
 }
 ?>
     </table>
-    <button onclick="location.href='top.php'">メニューへ戻る</button>
+    <form action="top.php" method="post">
+        <button type="submit">メニュー画面に戻る</button>
+    </form>
+
 </body>
 
 </html>

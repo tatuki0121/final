@@ -11,6 +11,8 @@
 
 <body>
     <h1>登録画面</h1>
+    <a href="top.php">メニューに戻る</a>
+    <hr>
 
     <form action="register-output.php" method="post">
 

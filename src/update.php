@@ -13,6 +13,7 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/update.css">
 
 </head>
 
@@ -22,6 +23,8 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
             <th>名産品ID</th>
             <th>商品名</th>
             <th>県名</th>
+            <th>操作</th>
+
         </tr>
         <?php
     $pdo=new PDO($connect,USER,PASS);
@@ -41,14 +44,17 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 		echo '<td>';
 		echo ' <input type="text" name="ken" value="', $row['ken'], '">';
 		echo '</td> ';
-		echo '<td><input type="submit" value="更新"></td>';
+		echo '<button type="submit">更新</button>';
 		echo '</form>';
         echo '</tr>';
 		echo "\n";
 	}
 ?>
     </table>
-    <button onclick="location.href='top.php'">メニューへ戻る</button>
+    <form action="top.php" method="post">
+        <button type="submit">メニュー画面に戻る</button>
+    </form>
+
 </body>
 
 </html>
