@@ -13,6 +13,7 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/register-output.css">
 
 
 </head>
@@ -27,9 +28,9 @@ if(empty($_POST['sname'])){
     echo '県名を入力してください。';
 }
 else if($sql->execute([$_POST['sname'],$_POST['ken']])){
-    echo '<font color="red">追加に成功しました。</font>';
+    echo '追加に成功しました。';
 }else{
-    echo '<font color="red">追加に失敗しました。</font>';
+    echo '追加に失敗しました。';
 }
 ?>
     <br>
