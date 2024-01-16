@@ -12,11 +12,11 @@
     <h1>名産品情報管理メニュー</h1>
 
 
-    <form action="list.php" method="get">
+    <form action="list.php" method="post">
         <button type="submit">一覧</button>
     </form>
 
-    <form action="edit.php" method="get">
+    <form action="edit.php" method="post">
         <button type="submit">編集（登録・削除・更新）</button>
     </form>
 

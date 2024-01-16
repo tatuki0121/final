@@ -20,13 +20,13 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 <body>
     <?php
 $pdo=new PDO($connect,USER,PASS);
-$sql=$pdo->prepare('insert into 名産品(商品名,県名) values (?,?)');
-if(empty($_POST['商品名'])){
+$sql=$pdo->prepare('insert into product(sname,ken) values (?,?)');
+if(empty($_POST['sname'])){
     echo '商品名を入力してください。';
-}else if(empty($_POST['県名'])){
+}else if(empty($_POST['ken'])){
     echo '県名を入力してください。';
 }
-else if($sql->execute([$_POST['商品名'],$_POST['県名']])){
+else if($sql->execute([$_POST['sname'],$_POST['ken']])){
     echo '<font color="red">追加に成功しました。</font>';
 }else{
     echo '<font color="red">追加に失敗しました。</font>';
@@ -46,11 +46,11 @@ $pdo=new PDO(
     'LAA1517353',
     'tatuki0121'
 );
-foreach($pdo->query('select * from 名産品')as $row){
+foreach($pdo->query('select * from product')as $row){
     echo '<tr>';
-    echo '<td>',$row['名産品ID'],'</td>';
-    echo '<td>',$row['商品名'],'</td>';
-    echo '<td>',$row['県名'],'</td>';
+    echo '<td>',$row['id'],'</td>';
+    echo '<td>',$row['sname'],'</td>';
+    echo '<td>',$row['ken'],'</td>';
     echo '</tr>';
     echo "\n";
 }

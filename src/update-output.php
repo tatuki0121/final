@@ -19,16 +19,16 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
 <body>
     <?php
     $pdo=new PDO($connect, USER, PASS);
-    $sql=$pdo->prepare('update product set 商品名=?,県名=? where 名産品ID=?');
+    $sql=$pdo->prepare('update  product set sname=?,ken=? where id=?');
     // SQL発行準備 prepareメソッド　作成２
-    if (empty($_POST['商品名'])) {
+    if (empty($_POST['sname'])) {
         echo '商品名を入力してください。';
     } else
-    if  (empty($_POST['県名'])) {
+    if  (empty($_POST['ken'])) {
         echo '県名を入力してください。';
     } else
    
-    if ($sql->execute([htmlspecialchars($_POST['商品名']),$_POST['県名'],$_POST['名産品ID']])) {
+    if ($sql->execute([htmlspecialchars($_POST['sname']),$_POST['ken'],$_POST['id']])) {
         echo '更新に成功しました。';
     } else{
         echo '更新に失敗しました。';
@@ -45,11 +45,11 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
         </tr>
 
         <?php
-foreach($pdo->query('select * from 名産品')as $row){
+foreach($pdo->query('select * from product')as $row){
     echo '<tr>';
-    echo '<td>',$row['名産品ID'],'</td>';
-    echo '<td>',$row['商品名'],'</td>';
-    echo '<td>',$row['県名'],'</td>';
+    echo '<td>',$row['id'],'</td>';
+    echo '<td>',$row['sname'],'</td>';
+    echo '<td>',$row['ken'],'</td>';
     echo '</tr>';
     echo "\n";
 }

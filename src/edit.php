@@ -26,20 +26,20 @@ $pdo=new PDO(
     'LAA1517353',
     'tatuki0121'
 );
-foreach($pdo->query('select * from 名産品')as $row){
+foreach($pdo->query('select * from product')as $row){
     echo '<tr>';
-    echo '<td>',$row['名産品ID'],'</td>';
-    echo '<td>',$row['商品名'],'</td>';
-    echo '<td>',$row['県名'],'</td>';
+    echo '<td>',$row['id'],'</td>';
+    echo '<td>',$row['sname'],'</td>';
+    echo '<td>',$row['ken'],'</td>';
     echo '<td>';
     echo '<form action="update.php" method="post">';
-    echo '<input type="hidden" name="名産品ID" value="',$row['名産品ID'],'">';
+    echo '<input type="hidden" name="id" value="',$row['id'],'">';
     echo '<button type="submit">更新</button>';
     echo '</form>';
     echo '</td>';
     echo '<td>';
     echo '<form action="delete.php" method="post">';
-    echo '<input type="hidden" name="名産品ID" value="',$row['名産品ID'],'">';
+    echo '<input type="hidden" name="id" value="',$row['id'],'">';
     echo '<button type="submit">削除</button>';
     echo '</form>';
     echo '</td>';

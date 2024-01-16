@@ -25,21 +25,21 @@ $connect= 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
         </tr>
         <?php
     $pdo=new PDO($connect,USER,PASS);
-	$sql=$pdo->prepare('select * from 名産品 where 名産品ID=?');
-	$sql->execute([$_POST['名産品ID']]);
+	$sql=$pdo->prepare('select * from product where id=?');
+	$sql->execute([$_POST['id']]);
 
 
 	foreach ($sql as $row) {
         echo '<tr>';
 		echo '<form action="update-output.php" method="post">';
         echo '<td> ';
-		echo '<input type="text" name="名産品ID" value="', $row['名産品ID'], '">';
+		echo '<input type="text" name="id" value="', $row['id'], '">';
 		echo '</td> ';
 		echo '<td>';
-		echo '<input type="text" name="商品名" value="', $row['商品名'], '">';
+		echo '<input type="text" name="sname" value="', $row['sname'], '">';
 		echo '</td> ';
 		echo '<td>';
-		echo ' <input type="text" name="県名" value="', $row['県名'], '">';
+		echo ' <input type="text" name="ken" value="', $row['ken'], '">';
 		echo '</td> ';
 		echo '<td><input type="submit" value="更新"></td>';
 		echo '</form>';

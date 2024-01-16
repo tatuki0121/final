@@ -12,8 +12,8 @@
 
     <form action="register-output.php" method="post">
 
-        商品名　：<input type="text" name="商品名"><br>
-        県名　　：<input type="text" name="県名"><br>
+        商品名　：<input type="text" name="sname"><br>
+        県名　　：<input type="text" name="ken"><br>
         <button type="submit">登録する</button>
     </form>
 </body>
